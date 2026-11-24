@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4ec"><title>春信笺 · 恋爱人格测试</title><style>*{box-sizing:border-box} :root{color-scheme:light;--paper:#f8f4ec;--ink:#342b2b;--muted:#6d5f5c;--red:#943e4a;--line:#d9cbb9;--serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;--sans:"Microsoft YaHei","PingFang SC",Arial,sans-serif}
+body{margin:0;background:radial-gradient(ellipse at 85% 36%,#f6e8d7aa,transparent 56%),var(--paper);color:var(--ink);font:1rem/1.7 var(--sans);min-height:100svh;display:flex;flex-direction:column}main{flex:1}button{font:inherit;cursor:pointer}button:focus-visible,input:focus-visible+span{outline:3px solid #78672e;outline-offset:4px}button:disabled{cursor:default}button,.option{touch-action:manipulation}[hidden]{display:none!important}.mast,footer{width:min(89%,1180px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between}.mast{padding:22px 0 18px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font:700 1.48rem/1.2 var(--serif);letter-spacing:.12em}.brand small{display:block;margin-top:4px;letter-spacing:.17em;font:600 .65rem/1.3 Georgia,serif;color:var(--muted)}.seal,.art-seal,.tiny-seal{font-family:var(--serif);background:var(--red);color:#fff0db;text-align:center}.seal{font-size:.99rem;line-height:1.08;letter-spacing:.05em;padding:4px 3px;border-radius:4px 2px 5px 2px;outline:1px solid var(--red);outline-offset:2px;margin:3px}.mast-note,.kicker,.eyebrow{font-size:.875rem;letter-spacing:.12em}.mast-note{color:var(--muted)}.home{width:min(85%,1080px);margin:clamp(36px,6vh,74px) auto;display:grid;grid-template-columns:1fr .91fr;align-items:center;gap:6%}.eyebrow,.kicker{color:var(--red);font-weight:600}.eyebrow{display:flex;align-items:center;gap:12px;margin:0}.eyebrow i,footer i{display:inline-block;width:26px;height:1px;background:currentColor;opacity:.65}h1,h2,h3,p,figure{margin:0}h1{font:600 clamp(3.4rem,5.3vw,5.2rem)/1.18 var(--serif);letter-spacing:.045em;margin:26px 0 22px}h1 em{font-style:normal;color:var(--red)}.lead{line-height:1.95;color:#5f504b;font-size:1.025rem}.facts{display:flex;gap:0;margin:27px 0 29px}.facts div{padding:0 22px;border-left:1px solid var(--line)}.facts div:first-child{padding-left:0;border:0}.facts b,.facts span{display:block}.facts b{font:normal 1.65rem/1.15 Georgia,serif}.facts span{font-size:.84rem;color:var(--muted);margin-top:4px}.primary{background:var(--red);color:#fff9f0;border:1px solid var(--red);padding:11px 29px;min-height:46px;font-weight:600;letter-spacing:.05em;border-radius:3px;transition:background .18s,transform .18s}.primary:hover:enabled{background:#79313c}.primary:active:enabled{transform:translateY(1px)}.primary:disabled{background:#e1d7cb;color:#655a52;border-color:#d4c8ba}#start{min-width:209px}.postcard{padding:10px 10px 0;background:#fff9ec;border:1px solid #cdbaa4;box-shadow:6px 7px 0 -2px #e5d9c9,7px 8px 0 -2px #cdbdaa,0 14px 32px #60463615;transform:rotate(1.3deg);width:100%;max-width:444px;justify-self:center}.artwrap{position:relative;background:#efd2b5}.artwrap canvas{width:100%;height:auto;display:block}.art-label,.art-seal{position:absolute;writing-mode:vertical-rl}.art-label{top:6%;right:8%;color:#513b36;font:600 clamp(1.15rem,1.9vw,1.75rem)/1 var(--serif);letter-spacing:.19em}.art-seal{left:7%;bottom:8%;writing-mode:horizontal-tb;line-height:1.08;padding:4px 3px;font-size:.82rem;outline:1px solid var(--red);outline-offset:2px}figcaption{display:flex;align-items:center;gap:12px;padding:10px 6px;font:.82rem var(--serif);letter-spacing:.15em;color:#6d534b}.caption-line{height:1px;flex:1;background:#d3c3ac}footer{border-top:1px solid var(--line);padding:15px 0 19px;color:var(--muted);font-size:.78rem;gap:12px}footer span:first-child{display:flex;align-items:center;gap:9px}footer i{width:12px}
+.quiz,.result{width:min(90%,740px);margin:clamp(24px,5vh,54px) auto}.quiz{padding:clamp(24px,4vw,48px);background:#fffbf3;border:1px solid var(--line);box-shadow:0 9px 32px #6851380b}.quiz-top,.actions,.report-head,.result-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}#count{font:1rem Georgia,var(--serif);font-variant-numeric:tabular-nums;color:var(--muted)}progress{width:100%;display:block;appearance:none;border:0;margin:13px 0 28px;height:4px;border-radius:5px;overflow:hidden;background:#e9dfd0}progress::-webkit-progress-bar{background:#e9dfd0}progress::-webkit-progress-value{background:var(--red);transition:width .25s}progress::-moz-progress-bar{background:var(--red)}#question{font:600 clamp(1.45rem,2.7vw,2rem)/1.55 var(--serif);outline:none;margin-bottom:23px}fieldset{border:0;padding:0;margin:0;min-width:0;display:grid;gap:10px}.option{display:block;position:relative;cursor:pointer}.option input{position:absolute;opacity:0}.option>span{display:flex;align-items:center;gap:14px;border:1px solid #d9cfc1;background:#fffdf7;padding:12px 15px;border-radius:3px;transition:background .15s,border-color .15s}.option b{flex:0 0 25px;text-align:center;font:normal 1.05rem Georgia,serif;color:#867366;border-right:1px solid var(--line);padding-right:10px}.option:hover>span{border-color:#ad8280}.option input:checked+span{background:#f5e5df;border-color:var(--red);box-shadow:inset 3px 0 var(--red)}.option input:checked+span b{color:var(--red)}.actions{margin-top:25px}.plain{background:transparent;color:var(--red);border:0;padding:10px 4px;text-decoration:underline;text-underline-offset:5px}.plain:disabled{color:#a69b90;text-decoration:none}.reveal{animation:arrive .23s ease-out}@keyframes arrive{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+#report{position:relative;background:linear-gradient(130deg,#fff9ea,#f7e6d7);border:1px solid #c7aa92;padding:clamp(23px,5vw,45px);outline:1px solid #dbbfa9;outline-offset:-7px}.tiny-seal{padding:2px 5px;font-size:.88rem}.report-head{border-bottom:1px solid #c9ad98;padding-bottom:13px}#type{font:600 clamp(2.1rem,5vw,3.4rem)/1.3 var(--serif);letter-spacing:.05em;color:var(--red);margin:22px 0 9px;outline:0}#motto{font:1.14rem/1.7 var(--serif)}#tags{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0 21px}#tags span{color:#79404a;font-size:.8rem;border:1px solid #cdaaa0;border-radius:2px;padding:1px 8px}.report-grid{display:grid;grid-template-columns:1.28fr 1fr;gap:22px}h3{font:600 1.15rem/1.6 var(--serif);margin-bottom:5px}.report-grid p,.egg p,.reason p{line-height:1.75;color:#594d46}.egg{margin-top:17px;padding-top:11px;border-top:1px solid #d8c1ae}.reason{margin:24px 0}.reason h3{color:var(--red)}#scores{display:grid;gap:6px;margin-top:11px}.score-row{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:.875rem;border-bottom:1px solid var(--line);padding:4px 0}.score-row span{color:var(--muted)}.hint{font-size:.82rem;color:var(--muted)}#tie:not(:empty),#save-note:not(:empty){margin-top:10px}.result-actions{justify-content:flex-start;gap:24px}
+@media(max-width:700px){.mast,footer{width:89%}.mast{padding:15px 0}.home{width:89%;gap:24px;grid-template-columns:1fr;margin:24px auto 30px}.intro{display:contents}.eyebrow{grid-row:1}.home h1{grid-row:2;margin:-12px 0 0;font-size:clamp(2.55rem,9.2vw,3.85rem)}.home h1 br{display:block}.postcard{grid-row:3;max-width:100%;transform:rotate(.6deg);padding:6px 6px 0}.artwrap{height:clamp(148px,48vw,260px);overflow:hidden}.artwrap canvas{height:100%;object-fit:cover;object-position:50% 46%}.art-label{font-size:1.18rem;right:5%}.art-seal{left:4%;bottom:10%}figcaption{padding:7px 5px}.lead{grid-row:4;font-size:1rem;line-height:1.7}.facts{grid-row:5;margin:-6px 0}.facts div{padding:0 20px}.facts b{font-size:1.45rem}#start{grid-row:6;width:100%}footer{flex-wrap:wrap;gap:5px;padding:13px 0}.quiz,.result{width:92%;margin:20px auto}.quiz{padding:22px 17px}.report-grid{grid-template-columns:1fr;gap:13px}.actions{margin-top:20px}.option>span{padding:11px;gap:10px}progress{margin-bottom:20px}.result-actions>.primary{flex:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+dialog{width:min(92vw,460px);max-height:93svh;padding:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:5px}dialog::backdrop{background:#2d1d20a8}dialog img{display:block;max-width:100%;max-height:64svh;width:auto;height:auto;margin:0 auto 9px}dialog p{text-align:center}dialog .actions{margin:12px 0 0}dialog a.primary{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}</style></head>
+<body><header class="mast"><div class="brand"><span class="seal" aria-hidden="true">春信<br>手记</span><span>春信笺<small>LETTERS IN BLOOM</small></span></div><span class="mast-note">恋爱人格手记</span></header>
+<main>
+<section id="home" class="home">
+<div class="intro"><p class="eyebrow">春日来信 <i></i> 恋爱人格测试</p>
+<h1>你的心动，<br><em>如何落款？</em></h1>
+<p class="lead">喜欢的人发来一句「想见你」。<br>你会说出口，还是先向对方走一步？</p>
+<div class="facts"><div><b>40</b><span>道情境题</span></div><div><b>6–8</b><span>分钟左右</span></div><div><b>8</b><span>种心动人格</span></div></div>
+<button class="primary" id="start">拆信，开始测试</button></div>
+<figure class="postcard"><div class="artwrap"><canvas id="art" role="img" aria-label="一对春燕掠过圆月，红梅从远山间横斜入画"></canvas><span class="art-label">双燕衔春</span><span class="art-seal" aria-hidden="true">春<br>信</span></div><figcaption><span>双燕衔春图</span><span class="caption-line"></span><span>春信笺藏</span></figcaption></figure></section>
+<section id="quiz" class="quiz" hidden><div class="quiz-top"><span id="chapter" class="kicker"></span><span id="count"></span></div><progress id="progress" max="40" value="0" aria-label="已作答题数"></progress>
+<div id="question-body"><h2 id="question" tabindex="-1"></h2><fieldset id="options" aria-labelledby="question"></fieldset></div>
+<div class="actions"><button class="plain" id="back">上一题</button><button class="primary" id="next" disabled>下一题</button></div></section>
+<section id="result" class="result" hidden><article id="report"><div class="report-head"><span class="kicker">春信笺 · 心动人格签</span><span class="tiny-seal" aria-hidden="true">印</span></div><h2 id="type" tabindex="-1"></h2><p id="motto"></p><div id="tags"></div><div class="report-grid"><section><h3>性格特点</h3><p id="traits"></p></section><section><h3>隐藏优势</h3><p id="gift"></p></section></div><div class="egg"><h3>笺中彩蛋</h3><p id="egg"></p></div></article>
+<section class="reason"><h3>这封签为什么属于你</h3><p id="evidence"></p><div id="scores"></div><p id="tie" class="hint"></p></section><div class="result-actions"><button class="primary" id="save">生成分享图</button><button class="plain" id="restart">重新测试</button></div><p id="save-note" role="status" class="hint"></p></section></main><dialog id="share-dialog" aria-label="分享人格签"><img id="share-image" alt="我的春信笺人格分享图"><p class="hint">手机可长按图片保存</p><div class="actions"><button class="plain" id="close-share">返回结果</button><a id="download" class="primary">下载 PNG 图片</a></div></dialog>
+<footer><span>春信笺 <i></i> 趣味人格测试</span><span>仅供娱乐与自我探索，不作专业心理诊断。</span></footer><script>const questions = [
+  {"axes":[0,1],"text":"晚上十点，喜欢的人发来一句「想见你」。你怎么回？","options":["我也想你。刚才对着聊天框练习了三遍。","我也想见你。明晚那家面馆？我来订位。","有多想？说来听听。","拍下散步路上的空长椅，把位置发过去。"]},
+  {"axes":[1,2],"text":"早餐摊前多出十分钟，你想给对方一点惊喜。","options":["把昨晚想好的早安谜语发过去。","照着菜单名，临时编一句只有你俩懂的早安。","照收藏的口味单，带一份刚出锅的早餐。","看到新口味的包子，顺手给对方捎一个。"]},
+  {"axes":[0,2],"text":"你们通勤有一段顺路。你想多走几天这条路。","options":["直接提议每周三在同一个站口见。","今天刚好碰上，就说「一起走一段吧」。","记住对方常坐的车次，在站台上自然打招呼。","偶然同路时放慢脚步，让话题自己长出来。"]},
+  {"axes":[0,1],"text":"晚饭后，对方说「今天有点累」。你下意识会？","options":["直接问「想跟我讲讲吗？我有时间听」。","问一句「我能帮你什么？」随手接过碗筷。","顺着刚才的话，轻轻问「是下午那件事吗？」","把电视音量调低，往旁边挪出舒服的位置。"]},
+  {"axes":[1,2],"text":"你想把两个人的日常留下来，会怎么做？","options":["在每周日写三句话，记住这一周的小事。","聊天里冒出好句子就记下来，攒成语录。","固定每个月洗一张照片，贴进相册。","路过拍贴机就进去，把刚拍的照片塞进钱包。"]},
+  {"axes":[0,2],"text":"周末早上醒来，天气比预报好得多。","options":["发起出门邀约，连集合时间和地点一起说。","推开窗拍张照，直接问「现在去晒太阳吗？」","等对方提起出门，把收藏好的公园路线发过去。","对方说想走走，就穿鞋下楼，看风往哪边吹。"]},
+  {"axes":[0,1],"text":"聊天时发现，你们都爱同一家小店。","options":["坦白说「又多一个想约你吃饭的理由」。","当场邀请一起去，把能订的座位找出来。","顺着对方推荐的菜，聊起自己最喜欢的那一口。","下次经过时捎一份对方提过的点心。"]},
+  {"axes":[1,2],"text":"睡前只剩五分钟，你想留一点联系。","options":["按习惯发一段晚安语音，讲今天最好的小事。","随口讲刚想到的冷笑话，笑完就说晚安。","把对方明早要带的东西放到门口。","看见手机快没电了，顺手替对方插好充电线。"]},
+  {"axes":[0,2],"text":"第一次约会的餐厅临时关门了。你会？","options":["告诉对方「我有备选」，带路去第二家。","提议拐进下一条街，选第一家闻起来香的店。","先听对方的意见，再翻出事先存的两家店。","跟着对方逛，走到都想停的地方就吃。"]},
+  {"axes":[0,1],"text":"两个人约错了地铁出口，隔着一条大马路。","options":["先打电话说明白「我想快点见到你，我们这样走」。","主动发一句「站那儿等我」，过街去接。","沿着对方报出的地标，一句句对位置。","看清对方站的方向，举起手里的花让人认出来。"]},
+  {"axes":[1,2],"text":"挑一份纪念日礼物，你更愿意花心思在哪儿？","options":["提前写封信，每一段都讲一件共同经历。","想到一个好玩的梗，就录成当下的专属语音。","翻看愿望清单，提前备好提过很久的小物。","逛街撞见特别像对方的东西，就选它。"]},
+  {"axes":[0,2],"text":"你们要一起做一顿饭。哪种开场最自然？","options":["我来定菜谱，咱俩照采购清单分头拿。","我提议玩个游戏，各抓一样食材再决定做什么。","等你挑主菜，我按之前存的方子配齐食材。","你先动手，我看看冰箱里有什么能搭上。"]},
+  {"axes":[0,1],"text":"旅行中你想多留一天，对方还在犹豫。","options":["直接讲出舍不得走的原因，听听对方怎么想。","坦白想留下，先帮两个人查好改签方案。","顺着对方的顾虑聊，等话头合适再说自己的期待。","把第二天互不耽误的行程排出来，递给对方看。"]},
+  {"axes":[1,2],"text":"两人分工做旅行攻略，你最乐意接哪一项？","options":["提前把每一天写成一小段导览词。","到了地方即兴当解说，看到什么聊什么。","搞定车次、门票和每天第一站的时间。","负责边走边探店，随时带大家拐个弯。"]},
+  {"axes":[0,2],"text":"约好的野餐碰上雨天，你想把今天过好。","options":["提议换到提前收藏的温室，顺手确认开放时间。","直接说「下雨也好玩」，临时发起室内野餐。","先听听对方想法，再拿出备好的雨天清单。","对方想在哪儿躲雨就在哪儿坐，点心照样分着吃。"]},
+  {"axes":[0,1],"text":"你们订到的两个座位隔着过道，你想坐近一点。","options":["坦白说想坐一起，问对方介不介意换座。","主动走到服务台，问问有没有连在一起的空位。","听对方说完坐哪儿都行，再小声讲自己的想法。","等旁边出现空位，拍拍椅背让对方看过来。"]},
+  {"axes":[1,2],"text":"聚会上要给寿星送祝福，你想和对方一起准备。","options":["提前合写几句，把两个人想说的话编进去。","到现场一人接一句，即兴讲段小相声。","提前备好两人合做的小礼物，包得整整齐齐。","就地拿彩纸和丝带，一起临场做顶生日帽。"]},
+  {"axes":[0,2],"text":"想带喜欢的人认识自己的朋友，你会怎么约？","options":["主动约好小范围晚餐，提前介绍在场的人。","看到大家都在附近，开口邀请对方过来坐坐。","等对方提到想认识谁，再挑个合适的日子。","碰巧遇到熟人，就自然地把两边介绍给彼此。"]},
+  {"axes":[0,1],"text":"一群人聊天，对方的笑话只有你听懂了。","options":["直接夸「我听懂了，这句太妙了」。","主动举杯和对方碰一下，给个明晃晃的回应。","等大家换话题，轻声接上笑话的下半句。","隔着人群对上眼，做一个只有你俩懂的手势。"]},
+  {"axes":[1,2],"text":"你们有个共同群聊，你最想留下哪种传统？","options":["每周抛出一个好问题，大家轮流答。","谁想出有意思的接龙，谁就开个头。","固定每月组一次散步局，提前约好地点。","有人路过好玩的地方，就发位置随缘碰头。"]},
+  {"axes":[0,2],"text":"舞会放起一首两个人都熟悉的歌。","options":["直接邀舞，从事先练过的第一步开始。","伸手就邀「来呀」，跳错也顺着节拍转个圈。","等到熟悉的副歌，看对方点头再跟上练过的步子。","接住对方伸来的手，对方怎么晃就怎么晃。"]},
+  {"axes":[0,1],"text":"对方在饭桌上一直插不上话。你会？","options":["主动把话题递过去：「我想听听你的版本。」","挪把椅子坐到身边，主动让出自己的位置。","等对方开口时接一句，帮那句话顺畅地说下去。","等大家看过来时放下筷子，把注意力留给对方。"]},
+  {"axes":[1,2],"text":"散场之后，你想留下今晚的好心情。","options":["把席间听到的好话整理成一段小记。","趁还记得笑点，给对方发段边笑边说的语音。","把合影分好相册，约定每次聚会都加一张。","路过夜宵摊，顺手买份两人都爱的糖水。"]},
+  {"axes":[0,2],"text":"聚会就要散场，你还想和对方单独待一会儿。","options":["直接约下一站，告诉对方附近哪家茶馆还开着。","脱口而出「再走两步吧」，方向待会儿再挑。","等对方说不急着走，就拿出预先查好的夜游路线。","顺着对方回家的方向散步，看聊到哪里再道别。"]},
+  {"axes":[0,1],"text":"一句无心的话让你有些受伤。你更可能？","options":["直接说「刚才那句话让我有点难过」。","主动拉两把椅子坐下，留个认真相处的空间。","等对方问起来，用一个具体例子说清感受。","对方靠近时递上一杯水，用坐下来回应和好的意思。"]},
+  {"axes":[1,2],"text":"和好之后，你想给这件事一个收尾。","options":["约定一个固定的复盘时间，把心里话说透。","气氛松下来时，说一句刚想到的真心话。","一起定个以后暂停争执的手势，现在练一遍。","此刻一起去走走，顺路买点两个人爱吃的东西。"]},
+  {"axes":[0,2],"text":"对方心情低落，周末还没安排。你怎么陪？","options":["主动问愿不愿意出门，准备一条清静的路线。","主动提议下楼透气，走到哪儿就算哪儿。","等对方想动了，把早就查过的安静去处列出来。","让对方选第一步，此刻想坐着我就陪着坐。"]},
+  {"axes":[0,1],"text":"你收到了对方认真准备的小礼物。第一反应是？","options":["当面说出最打动自己的那个细节。","直接给个拥抱，马上把礼物用起来。","等对方问喜不喜欢，轻声讲它让我想起了什么。","下次见面时带着它，让对方自己发现。"]},
+  {"axes":[1,2],"text":"异地的某一晚，你想让两个人近一点。","options":["提前约好读同一篇短文，睡前聊最喜欢的一句。","随机翻一页书，把碰巧读到的句子念给对方听。","事先对好开场时间，同时按下电影播放键。","正巧看见漂亮月亮，就拉开窗帘给对方也看看。"]},
+  {"axes":[0,2],"text":"你们误会解开了，怎样重新靠近最舒服？","options":["主动约定周末见面，把时间地点说清楚。","伸手提议「现在一起出去吹会儿风吧」。","等对方说可以见面，再照熟悉的节奏安排。","接住对方递来的小零食，就从此刻聊起。"]},
+  {"axes":[0,1],"text":"对方为你记住了一件连你自己都忘的小事。","options":["直接说「你记得这件事，我真的很开心」。","主动把手伸过去握一握，让惊喜落在这个动作里。","等话题又绕回来，认真讲自己当时有多感动。","悄悄记下对方最近想要什么，下次也照顾到。"]},
+  {"axes":[1,2],"text":"心绪乱的时候，你喜欢怎样梳理对这段关系的感受？","options":["按习惯写日记，把今天没说出口的几句补上。","开个语音备忘录，想到哪儿就讲到哪儿。","把共同经历的票根按时间排好，慢慢回想。","随手翻翻相册，停在哪张就看看那天的自己。"]},
+  {"axes":[0,2],"text":"书店有场双人活动，你想和对方一起去。","options":["主动发邀请，把报名时间和流程都列清楚。","路过门口看见还有名额，马上问要不要进去。","等对方提起想逛书店，拿出早就存好的活动单。","跟着对方逛到活动区，刚好感兴趣就一起参加。"]},
+  {"axes":[0,1],"text":"逛展时，你看到一幅特别像你们关系的画。","options":["主动告诉对方「我们很像画里这两个人」。","主动牵对方站到画前，照着画里的姿势合张影。","等对方聊起画面，再说自己看到的那层意思。","在纪念品店挑张同款明信片，悄悄放进对方的袋子。"]},
+  {"axes":[1,2],"text":"给两个人做一张歌单，你最享受哪个环节？","options":["按相识顺序排，每首都写一行入选理由。","随机点一首，用歌名即兴接出一句情话。","按约会路线编排，让每段路都配上合适的音乐。","遇到喜欢的歌就加，散步时开随机播放。"]},
+  {"axes":[0,2],"text":"有人送你两张演出票，哪种相邀方式像你？","options":["直接约对方，顺便把去程和散场时间发过去。","直接问「今晚要不要一起听首现场？」","先问对方最近爱听什么，合口味再讲时间安排。","等聊天里刚好提到乐队，再顺势把票拿出来。"]},
+  {"axes":[0,1],"text":"在手作市集，你看到可以两人合作的摊位。","options":["直接说「我想和你一起做，给它起个名字吧」。","主动拿起两份材料，示意对方一起动手。","听对方说想做什么，再接一句有趣的创作点子。","观察对方挑中的颜色，默默选一款能搭成对的。"]},
+  {"axes":[1,2],"text":"出门看花，你最想怎样记录这趟春游？","options":["提前想好几个小问题，回来合写一篇游记。","一路给花取绰号，把最妙的那句留给对方。","照着花期地图打卡，把沿路照片做成一册。","捡片落花夹进票根，带走一个临时起意的纪念。"]},
+  {"axes":[0,2],"text":"想把一种新爱好变成两个人的事，你会？","options":["主动挑个入门课，约好一起上四次。","主动发起挑战「我们今天就试一次！」","听到对方提起兴趣，再拿出存好的练习计划。","对方开始尝试时就凑过去，一起玩一会儿。"]},
+  {"axes":[0,1],"text":"如果只能给今天的心动留一个落款，你会选？","options":["亲口说「今天有你在，我很开心」。","主动把下一次见面的车票买好，约定再会。","等对方说晚安的时候，回一句只属于你们的暗号。","临别时把手里的暖饮递过去，目送对方走远。"]}
+];
+const profiles = {
+  "+++": [
+    "春信词人",
+    "想念一旦押了韵，我就把寄信日写进日历。",
+    "你习惯先把心意说清，再给它一个可以期待的日子。纪念日的小纸条、出发前的一声招呼，都是你认真相处的方式。",
+    "你能把模糊的期待说成两个人听得懂的约定。",
+    "你的信封里大概还有一张便签，写着「下封信，周五见」。"
+  ],
+  "++-": [
+    "踏歌游侠",
+    "刚好想你，刚好这一句就要唱给你。",
+    "有趣的话到了嘴边，你常常舍不得留到明天。你愿意先开口，也给对方留出把话题带向别处的空间。",
+    "你擅长接住一瞬间的心动，让普通的聊天有了共同笑点。",
+    "如果心动有片尾曲，你会在回家的路上即兴哼出副歌。"
+  ],
+  "+-+": [
+    "长街提灯人",
+    "我把喜欢，点在你回家要走的那条路上。",
+    "你会主动靠近，也愿意把细节提前打点好。与其让一句邀约悬着，你往往先查好时间，再把见面的可能递给对方。",
+    "你能看见约定落地之前，那些容易被忽略的小麻烦。",
+    "你的约会锦囊里，多半放着备用车次和对方爱吃的糖。"
+  ],
+  "+--": [
+    "逐花行客",
+    "花开在下一条街，我现在就想带你去。",
+    "你喜欢用一个动作打开局面。伸出去的手、临时拐进的小路、刚买的两张票，都可能成为你表达好感的开头。",
+    "计划变化时，你能很快找到一件可以一起做的小事。",
+    "若给你一张空白地图，第一处标记大概是「刚才这里很好玩」。"
+  ],
+  "-++": [
+    "月下读信人",
+    "你的话，我总留一盏灯慢慢读。",
+    "你愿意先听懂对方，再挑一个恰当的时刻回应。你记得谈话里的小细节，也愿意用文字或声音把它们郑重还回去。",
+    "你能接起一段隔了很久的对话，让人感觉自己的话被认真记住。",
+    "你的书签背面，也许抄着对方早就忘记的一句妙语。"
+  ],
+  "-+-": [
+    "听雨和诗人",
+    "你说半句春雨，我接半句晚风。",
+    "你的心动常藏在接话的分寸里。你愿意顺着对方的节奏靠近，一句临时想到的回应，往往比预演的台词更像你。",
+    "你能听出一句玩笑里的试探，给谈话留个轻盈的出口。",
+    "你的专属暗号通常没有出处，只是某天两个人同时笑了。"
+  ],
+  "--+": [
+    "庭前种花人",
+    "你随口说的春天，我悄悄种在窗前。",
+    "你常先观察，再用准备好的小事回应。也许你没提那次聊天，却会在下一次见面时带来对方提过的东西。",
+    "你擅长从细节里发现需要，把照顾变成可依靠的日常。",
+    "你的花盆标签上也许写着：「等开花了，再叫你来看。」"
+  ],
+  "---": [
+    "溪畔同舟人",
+    "你想靠岸时，我刚好把船停稳。",
+    "你愿意给关系留一点空白。对方想说话时你靠近，想安静时你也能自在地陪着，今天怎么走可以边走边决定。",
+    "你能顺着当下的气氛调整行动，让陪伴变得轻松。",
+    "如果约会是一叶小舟，你的隐藏道具一定是两人份的坐垫。"
+  ]
+};
+function paintLetter(canvas) {
+  const ctx = canvas.getContext('2d');
+  const w = 640, h = 690;
+  canvas.width = w * 2; canvas.height = h * 2;
+  ctx.scale(2, 2);
+  let seed = 15931;
+  function rand() { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; }
+  function range(a,b) {return a + rand()*(b-a);}
+  function dot(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
+  function stroke(x,y,x2,y2,color,width){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x2,y2);ctx.stroke();}
+  const bg=ctx.createLinearGradient(0,0,w,h);bg.addColorStop(0,'#f4dcc4');bg.addColorStop(.6,'#f1c9aa');bg.addColorStop(1,'#dfaa91');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+  dot(270,290,179,'#f9ecd3');
+  for(let i=0;i<3;i++){
+    ctx.strokeStyle=['#b2846575','#b284652c','#b284652c'][i];ctx.lineWidth=.9;ctx.beginPath();ctx.arc(270,290,178+i*4,0,Math.PI*2);ctx.stroke();
+  }
+  // Layered distant ridges follow a continuous outline, like a coloured woodcut.
+  for(let k=0;k<4;k++){
+    const y=510+k*41;
+    ctx.beginPath();ctx.moveTo(0,h);
+    for(let x=0;x<=w;x+=2)ctx.lineTo(x,y+30*Math.sin(x/91+k*2)+15*Math.cos(x/49+k)+8*Math.sin(x/24+k*2)+3*Math.sin(x/7+k));
+    ctx.lineTo(w,h);ctx.closePath();ctx.fillStyle=['#c4998980','#bd917d85','#b37f6b75','#a46a5c80'][k];ctx.fill();
+  }
+  function flower(x,y,s,turn){
+    ctx.save();ctx.translate(x,y);ctx.rotate(turn);ctx.scale(s,s);
+    const palette=['#a83148','#bb3c52','#c84e5e','#d86872','#df8490','#e4a19b'];
+    const base=Math.floor(range(0,4));
+    for(let i=0;i<5;i++){
+      ctx.save();ctx.rotate(i*Math.PI*2/5);ctx.fillStyle=palette[(base+(i%3))%6];ctx.strokeStyle='#8f354348';ctx.lineWidth=.45;
+      ctx.beginPath();ctx.moveTo(0,1);ctx.bezierCurveTo(-5,-1,-9,-9,-4.8,-13);ctx.bezierCurveTo(-2.4,-15,0,-13.6,1,-13.3);ctx.bezierCurveTo(5.5,-15.3,8,-9,6,-6.5);ctx.quadraticCurveTo(4,-2,0,1);ctx.fill();ctx.stroke();
+      for(let j=-1;j<=1;j++)stroke(0,-1,j*3,-10+Math.abs(j),'#f7c8b053',.55);
+      ctx.restore();
+    }
+    dot(0,0,2.4,'#732c38');
+    for(let j=0;j<9;j++){const a=j*.698,r=range(2.8,5.4),x2=Math.cos(a)*r,y2=Math.sin(a)*r;stroke(0,0,x2,y2,'#e4bf78',.55);dot(x2,y2,.8,'#fff0bd');}
+    ctx.restore();
+  }
+  const blooms=[];
+  function twig(x,y,angle,length,width,depth) {
+    const bend=range(-.28,.28), dx=Math.cos(angle),dy=Math.sin(angle);
+    const x2=x+Math.cos(angle+bend)*length,y2=y+Math.sin(angle+bend)*length;
+    ctx.beginPath();ctx.moveTo(x-dy*width/2,y+dx*width/2);
+    ctx.quadraticCurveTo(x+dx*length*.48-dy*width*.37,y+dy*length*.48+dx*width*.37,x2-dy*width*.22,y2+dx*width*.22);
+    ctx.lineTo(x2+dy*width*.22,y2-dx*width*.22);ctx.quadraticCurveTo(x+dx*length*.48+dy*width*.37,y+dy*length*.48-dx*width*.37,x+dy*width/2,y-dx*width/2);ctx.closePath();ctx.fillStyle=depth>2?'#513b39':'#6b4742';ctx.fill();
+    if(width>4)stroke(x,y,x+(x2-x)*.76,y+(y2-y)*.76,'#ad81756b',width*.12);
+    if(depth<4){
+      for(let j=0;j<2;j++){let t=range(.3,1);blooms.push([x+(x2-x)*t+range(-5,5),y+(y2-y)*t+range(-6,6),range(.42,1.04),range(0,6.3)]);}
+    }
+    if(!depth){blooms.push([x2,y2,.28,0]);return;}
+    twig(x2,y2,angle+bend+range(-.24,.24),length*range(.70,.84),width*.67,depth-1);
+    const t=range(.58,.88),side=rand()<.5?-1:1;
+    twig(x+(x2-x)*t,y+(y2-y)*t,angle+side*range(.48,.98),length*range(.49,.72),width*.53,depth-1);
+  }
+  twig(677,597,-2.19,207,22,5);twig(580,440,-2.87,162,10,4);twig(658,258,-2.4,137,9,4);
+  blooms.forEach(b=>flower(...b));
+  function swallow(x,y,s,rot) {
+    ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s,s);
+    ctx.fillStyle='#4c4142';ctx.beginPath();ctx.moveTo(-13,2);ctx.bezierCurveTo(-29,-2,-49,-29,-55,-49);ctx.bezierCurveTo(-41,-35,-20,-27,-6,-10);ctx.bezierCurveTo(-12,-33,-9,-52,-2,-66);ctx.bezierCurveTo(-3,-42,10,-23,5,-9);ctx.quadraticCurveTo(14,-15,20,-8);ctx.lineTo(29,-7);ctx.lineTo(19,-4);ctx.quadraticCurveTo(11,6,-10,8);ctx.lineTo(-39,24);ctx.lineTo(-26,9);ctx.lineTo(-52,14);ctx.closePath();ctx.fill();
+    ctx.fillStyle='#d9b6a1';ctx.beginPath();ctx.moveTo(-15,5);ctx.quadraticCurveTo(5,-6,16,-5);ctx.quadraticCurveTo(6,4,-15,5);ctx.fill();dot(15,-8,.9,'#f4dcc4');ctx.restore();
+  }
+  swallow(257,266,.91,-.25);swallow(151,311,.49,-.55);
+  for(let i=0;i<13;i++){const x=range(20,475),y=range(270,572);ctx.save();ctx.translate(x,y);ctx.rotate(range(0,6));ctx.fillStyle='#c3616b90';ctx.beginPath();ctx.ellipse(0,0,range(1,3),range(3,6),0,0,7);ctx.fill();ctx.restore();}
+  for(let i=0;i<47000;i++) {ctx.fillStyle=rand()<.5?'#603e3011':'#fff5da20';ctx.fillRect(rand()*w,rand()*h,range(.4,1.5),range(.5,1.8));}
+  ctx.strokeStyle='#7b4b453b';ctx.lineWidth=1;ctx.strokeRect(12,12,w-24,h-24);
+}
+const chapters = ['日常习惯','处事方式','社交模式','情绪反应','兴趣偏好'];
+const dimensions = [
+  {name:'靠近方式', plus:'主动点明', minus:'顺势回应'},
+  {name:'传情方式', plus:'言语传情', minus:'行动传情'},
+  {name:'相处节奏', plus:'提前安排', minus:'随兴而行'}
+];
+const $ = id => document.getElementById(id);
+const answers = Array(questions.length).fill(null);
+let current = 0;
+let lastResult = null;
+
+function signsOf(option) { return [option < 2 ? 1 : -1, option % 2 === 0 ? 1 : -1]; }
+function evaluate(picks) {
+  if (picks.length !== questions.length || picks.some(v => !Number.isInteger(v) || v < 0 || v > 3)) throw Error('请先完成所有题目');
+  const totals = dimensions.map(() => ({plus:0,minus:0,last:0}));
+  questions.forEach((q,i) => {
+    const signs = signsOf(picks[i]);
+    q.axes.forEach((axis,k) => {
+      const score = totals[axis];
+      score[signs[k] > 0 ? 'plus' : 'minus']++;
+      score.last = signs[k];
+    });
+  });
+  // An exact tie follows the last answer involving that dimension.
+  const directions = totals.map(t => Math.sign(t.plus - t.minus) || t.last);
+  const key = directions.map(d => d > 0 ? '+' : '-').join('');
+  return {key,totals,directions,tags:directions.map((s,i) => dimensions[i][s>0?'plus':'minus'])};
+}
+function show(id) {
+  for (const item of ['home','quiz','result']) $(item).hidden = item !== id;
+  document.documentElement.scrollTop = 0;
+}
+function renderQuestion() {
+  const q = questions[current];
+  $('chapter').textContent = chapters[Math.floor(current / 8)];
+  $('count').textContent = String(current+1).padStart(2,'0') + ' / ' + questions.length;
+  $('progress').value = answers.filter(Number.isInteger).length;
+  $('question').textContent = q.text;
+  $('options').replaceChildren();
+  // Rotate the four scoring combinations so a fixed screen position carries no fixed trait.
+  const firstOrder = [1,0,2,3];
+  const order = firstOrder.map(n => (n + current) % 4);
+  order.forEach((option,index) => {
+    const label = document.createElement('label');
+    label.className = 'option';
+    const radio = document.createElement('input');
+    radio.type = 'radio'; radio.name = 'answer'; radio.value = option;
+    radio.checked = answers[current] === option;
+    radio.addEventListener('change', () => {
+      answers[current] = option;
+      $('next').disabled = false;
+      $('progress').value = answers.filter(Number.isInteger).length;
+    });
+    const line = document.createElement('span'), letter = document.createElement('b');
+    letter.textContent = 'ABCD'[index]; letter.setAttribute('aria-hidden','true');
+    line.append(letter,document.createTextNode(q.options[option]));
+    label.append(radio,line); $('options').append(label);
+  });
+  $('back').disabled = current === 0;
+  $('next').disabled = answers[current] === null;
+  $('next').textContent = current === questions.length-1 ? '揭晓我的人格签' : '下一题';
+  const body = $('question-body'); body.classList.remove('reveal'); void body.offsetWidth; body.classList.add('reveal');
+  $('question').focus({preventScroll:true}); window.scrollTo(0,0);
+}
+function fillReport() {
+  const result = evaluate(answers); lastResult = result;
+  const [name,motto,traits,gift,egg] = profiles[result.key];
+  for (const [id,value] of Object.entries({type:name,motto,traits,gift,egg})) $(id).textContent=value;
+  $('tags').replaceChildren(...result.tags.map(text=>{const el=document.createElement('span');el.textContent=text;return el;}));
+  const matching = questions.map((q,i) => ({i,count:q.axes.filter((axis,k)=>signsOf(answers[i])[k]===result.directions[axis]).length}));
+  matching.sort((a,b)=>b.count-a.count || a.i-b.i);
+  const example = questions[matching[0].i];
+  $('evidence').textContent = '在第 '+(matching[0].i+1)+' 题「'+example.text.replace(/[。？]$/,'')+'」中，你选择了「'+example.options[answers[matching[0].i]].replace(/[。]$/,'')+'」。综合 40 次选择，你的三项倾向如下。';
+  $('scores').replaceChildren(...result.totals.map((t,i)=>{
+    const row=document.createElement('div');row.className='score-row';
+    const title=document.createElement('b'),data=document.createElement('span'),d=dimensions[i];
+    title.textContent=d.name;data.textContent=d.plus+' '+t.plus+' / '+d.minus+' '+t.minus;
+    row.append(title,data);return row;
+  }));
+  const ties=result.totals.flatMap((t,i)=>t.plus===t.minus?[dimensions[i].name]:[]);
+  $('tie').textContent = ties.length ? ties.join('、')+'两侧同分，按最后一道涉及该维度的回答确定本次落款。' : '';
+  $('save-note').textContent='';show('result');$('type').focus({preventScroll:true});
+}
+function begin() {answers.fill(null);current=0;lastResult=null;show('quiz');renderQuestion();}
+$('start').addEventListener('click', begin);$('restart').addEventListener('click',begin);
+$('back').addEventListener('click',()=>{if(current>0){current--;renderQuestion();}});
+$('next').addEventListener('click',()=>{
+  if(answers[current]===null)return;
+  if(current===questions.length-1)fillReport();
+  else{current++;renderQuestion();}
+});
+function shareCard(result) {
+  const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1200;
+  const c=canvas.getContext('2d'),[name,motto,traits,gift,egg]=profiles[result.key];
+  const serif='"Songti SC","SimSun",serif',sans='"Microsoft YaHei","PingFang SC",sans-serif';
+  c.fillStyle='#fbf1e2';c.fillRect(0,0,900,1200);
+  c.strokeStyle='#b2947e';c.lineWidth=1.5;c.strokeRect(25,25,850,1150);
+  const art=$('art');c.save();c.beginPath();c.rect(43,43,814,220);c.clip();
+  c.drawImage(art,0,325,art.width,395,43,43,814,250);c.restore();
+  function line(text,x,y,size,color,family){c.fillStyle=color;c.font=size+'px '+family;c.fillText(text,x,y);}
+  function paragraph(text,y,size,leading,family=sans){
+    c.fillStyle='#51453e';c.font=size+'px '+family;let row='';
+    for(const char of text){if(c.measureText(row+char).width>742 && row){c.fillText(row,78,y);y+=leading;row='';}row+=char;}
+    c.fillText(row,78,y);return y+leading;
+  }
+  line('春信笺  /  心动人格签',78,323,24,'#7f5960',serif);
+  line(name,74,422,72,'#903e4b',serif);
+  let y=paragraph(motto,486,31,45,serif);
+  line(result.tags.join('   ·   '),78,y+11,23,'#914956',sans);y+=82;
+  for(const [heading,copy] of [['性格特点',traits],['隐藏优势',gift],['笺中彩蛋',egg]]){
+    line(heading,78,y,30,'#903e4b',serif);y=paragraph(copy,y+47,26,40)+32;
+  }
+  line('春信笺  ·  趣味人格测试，仅供娱乐与自我探索。',78,1133,20,'#73675c',sans);
+  return canvas;
+}
+$('save').addEventListener('click',()=>{
+  if(!lastResult)return;
+  try {
+    const png=shareCard(lastResult).toDataURL('image/png');
+    $('share-image').src=png;
+    $('download').href=png;
+    $('download').download='春信笺-'+profiles[lastResult.key][0]+'.png';
+    $('share-dialog').showModal();
+  } catch { $('save-note').textContent='此浏览器未能打开分享图，可直接截取上方人格签。'; }
+});
+$('close-share').addEventListener('click',()=>$('share-dialog').close());
+paintLetter($('art'));</script></body></html>
